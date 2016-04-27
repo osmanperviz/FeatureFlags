@@ -1,13 +1,15 @@
 FeatureSettings.config do |config|
+  #config.test_value = true
 
-    #convig.test_value = true
 
   if Rails.env.production?
-    #convig.test_value = false
+    #config.test_value = false
   end
+
   if Rails.env.development?
 
   end
+
   if Rails.env.test?
 
   end
