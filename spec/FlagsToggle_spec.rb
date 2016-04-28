@@ -11,25 +11,25 @@ require 'Rails'
       include_context "shared_config_block"
 
       it "it has a config instance " do
-        expect(Flags.config).to be_a Flags::Configuration
+        expect(described_class.config).to be_a Flags::Configuration
       end
 
       it "it access config boolean value with question mark at the end " do
-        expect(Flags.config.test_value?).to be_truthy
+        expect(described_class.config.test_value?).to be_truthy
       end
 
       it "it access config none boolean value withot question mark at the end " do
-        expect(Flags.config.test_value2).to eq('Test data')
+        expect(described_class.config.test_value2).to eq('Test data')
       end
 
       it 'it retuns right value' do
-        expect(Flags.config.test_value?).to eq(true)
-        expect(Flags.config.test_value1?).to eq(false)
-        expect(Flags.config.test_value2).to eq('Test data')
+        expect(described_class.config.test_value?).to eq(true)
+        expect(described_class.config.test_value1?).to eq(false)
+        expect(described_class.config.test_value2).to eq('Test data')
       end
 
       it 'override with environment variables' do
-        expect(Flags.config.overrided_value).to eq('Some overrided data')
+        expect(described_class.config.overrided_value).to eq('Some overrided data')
       end
 
     end
@@ -52,9 +52,9 @@ require 'Rails'
 
 
       it 'it retuns right value' do
-        expect(Flags.config.test_value?).to eq(false)
-        expect(Flags.config.test_value1?).to eq(true)
-        expect(Flags.config.test_value2).to eq('Test data for testing')
+        expect(described_class.config.test_value?).to eq(false)
+        expect(described_class.config.test_value1?).to eq(true)
+        expect(described_class.config.test_value2).to eq('Test data for testing')
       end
 
       it 'override with environment variables' do

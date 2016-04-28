@@ -8,11 +8,11 @@ let(:config){Flags::Configuration.new}
 
   describe '#initialize ' do
     it 'it will return Configuration instance' do
-      expect(Flags::Configuration.new).to  be_an_instance_of(Flags::Configuration)
+      expect(described_class.new).to  be_an_instance_of(described_class)
     end
 
     it 'it will set attribute accessor' do
-      expect(Flags::Configuration.new).to  be_an_instance_of(Flags::Configuration)
+      expect(described_class.new).to  be_an_instance_of(described_class)
     end
 
   end
