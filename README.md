@@ -17,7 +17,7 @@ Or install it yourself as:
     $ gem install featureToggle
 
 ## Usage
- Run "flags_toggle_config" command will generate under AppRoot/config//initializers/Flags.rb file.All configuration will be placed in this file.You may also specify a Rails environment to use a new feature all enviroments, but not production:
+ Run "rake flags_toggle_config" command will generate under AppRoot/config/initializers/Flags.rb file.All configuration will be placed in this file.You may also specify a Rails environment to use a new feature (eg.  in all environments, but not in production):
 
  * This will generate file like this:
 
@@ -45,15 +45,15 @@ If your value is a boolean(PREDICATE) you will access them with question mark at
 
           Feature.config.test_value? # true/false
 
-If you value is string or number(NO PREDICATE) you will access on normal(Regular) way:
+If you value is string or number(NON PREDICATE) you will access on normal(Regular) way:
 
           Feature.config.app_id # some string or number
 
 ## Use Feature in your production code
 
-          desktop_subdomain = Feature.config.desktop_subdomain
+          desktop_subdomain = Feature.config.desktop_subdomain # eg. 'www'
 
-* or
+or
 
           if Flags.config.enable_some_feature? do
             #do something
