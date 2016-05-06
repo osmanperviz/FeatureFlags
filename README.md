@@ -20,6 +20,7 @@ Or install it yourself as:
  Run "flags_toggle_config" command will generate under AppRoot/config//initializers/Flags.rb file.All configuration will be placed in this file.
 
  * This will generate file like this:
+ 
          FeatureSettings.config do |config|
            config.test_value = true
            config.app_id = 'Some_id'
