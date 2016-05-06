@@ -17,19 +17,17 @@ Or install it yourself as:
     $ gem install featureToggle
 
 ## Usage
- Run "flags_toggle_config" command will generate under AppRoot/config//initializers/Flags.rb file.All configuration will be placed in this file.
+ Run "flags_toggle_config" command will generate under AppRoot/config//initializers/Flags.rb file.All configuration will be placed in this file.You may also specify a Rails environment to use a new feature all enviroments, but not production:
 
  * This will generate file like this:
 
          FeatureSettings.config do |config|
 
-             config.test_value = true
              config.app_id = 'Some_id'
              config.desktop_subdomain = 'www'
              config.enable_some_feature = true
 
            if Rails.env.production?
-             config.test_value = false
              config.app_id = 'Production_id'
              config.enable_some_feature = false
            end
@@ -38,27 +36,30 @@ Or install it yourself as:
            end
 
            if Rails.env.staging?
-           config.desktop_subdomain = 'staging'
+             config.desktop_subdomain = 'staging'
            end
          end
 
 If your value is a boolean(PREDICATE) you will access them with question mark at the end:
 
-          Feature.config.test_value?
+          Feature.config.test_value? #some boolean
 
 If you value is string or number(NO PREDICATE) you will access on normal(Regular) way:
 
-          Feature.config.app_id
+          Feature.config.app_id #some string or number
 
-* Use Feature in your production code
+## Use Feature in your production code
 
           desktop_subdomain = Feature.config.desktop_subdomain
+
 or
 
           if Flags.config.enable_some_feature do
             #do something
           end    
 
+## Environment variable overriding
+In flagsToggle gem environment variable automatically override you custom configuration.
 
 
 ## Contributing
