@@ -20,27 +20,26 @@ Or install it yourself as:
  Run "flags_toggle_config" command will generate under AppRoot/config//initializers/Flags.rb file.All configuration will be placed in this file.
 
  * This will generate file like this:
+         FeatureSettings.config do |config|
+           config.test_value = true
+           config.app_id = 'Some_id'
 
-     FeatureSettings.config do |config|
-       config.test_value = true
-       config.app_id = 'Some_id'
+           if Rails.env.production?
+             config.test_value = false
+             config.app_id = 'Production_id'
+           end
 
-       if Rails.env.production?
-         config.test_value = false
-         config.app_id = 'Production_id'
-       end
+           if Rails.env.development?
 
-       if Rails.env.development?
+           end
 
-       end
+           if Rails.env.test?
 
-       if Rails.env.test?
-
-       end
-     end
+           end
+         end
 If your value is a boolean you will access them with question mark at the end:
     Feature.config.test_value?
-    
+
 If you value is string or number you will access on normal(Regular) way:
     Feature.config.app_id  
 
