@@ -1,5 +1,5 @@
 # featureToggle
-A flagsToggle is a branching point that your code can utilize to determine whether or not a feature should be made available to one or more customers.Enable a feature for a specific set of users, or just your team for them to try it out before it's rolled out for everyone.
+A flagsToggle is a branching point that your code can utilize to determine whether or not a feature should be made available to one or more customers.This simple gem allow you to enable a feature for a specific set of users, or just your team for them to try it out before it's rolled out for everyone.
 ## Installation
 
 Add this line to your application's Gemfile:
