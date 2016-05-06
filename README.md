@@ -43,14 +43,18 @@ Or install it yourself as:
          end
 
 If your value is a boolean(PREDICATE) you will access them with question mark at the end:
+
           Feature.config.test_value?
 
 If you value is string or number(NO PREDICATE) you will access on normal(Regular) way:
+
           Feature.config.app_id
 
 * Use Feature in your production code
+
           desktop_subdomain = Feature.config.desktop_subdomain
 or
+
           if Flags.config.enable_some_feature do
             #do something
           end    
