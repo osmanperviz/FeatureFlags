@@ -1,4 +1,4 @@
-class FeatureSettings
+module FeatureSettings
 
   class << self
 

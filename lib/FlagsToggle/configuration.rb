@@ -2,6 +2,7 @@ module Flags
   class Configuration
 
     def initialize()
+      binding.pry
       attributes = FeatureSettings.get_attributes
       attributes.each do |key,value|
         add_attr(key, value)
