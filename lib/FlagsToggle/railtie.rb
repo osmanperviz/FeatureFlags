@@ -3,7 +3,7 @@ module Flags
   class Railtie < Rails::Railtie
     railtie_name :Flags
      rake_tasks do
-       load 'tasks/flags_toggle_config'
+       load 'tasks/flags_toggle_config.rake'
      end
-  end   
+  end
 end
