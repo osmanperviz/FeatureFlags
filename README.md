@@ -24,12 +24,13 @@ Or install it yourself as:
          FeatureSettings.config do |config|
 
              config.app_id = 'Some_id'
-             config.desktop_subdomain = 'www'
              config.enable_some_feature = true
+             config.desktop_subdomain = 'Some default subdomain'
 
            if Rails.env.production?
              config.app_id = 'Production_id'
              config.enable_some_feature = false
+             config.desktop_subdomain = 'www'
            end
 
            if Rails.env.development?
@@ -42,19 +43,19 @@ Or install it yourself as:
 
 If your value is a boolean(PREDICATE) you will access them with question mark at the end:
 
-          Feature.config.test_value? #some boolean
+          Feature.config.test_value? # true/false
 
 If you value is string or number(NO PREDICATE) you will access on normal(Regular) way:
 
-          Feature.config.app_id #some string or number
+          Feature.config.app_id # some string or number
 
 ## Use Feature in your production code
 
           desktop_subdomain = Feature.config.desktop_subdomain
 
-or
+* or
 
-          if Flags.config.enable_some_feature do
+          if Flags.config.enable_some_feature? do
             #do something
           end    
 
