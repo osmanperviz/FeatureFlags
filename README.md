@@ -20,8 +20,9 @@ Or install it yourself as:
  Run "flags_toggle_config" command will generate under AppRoot/config//initializers/Flags.rb file.All configuration will be placed in this file.
 
  * This will generate file like this:
- 
+
          FeatureSettings.config do |config|
+
            config.test_value = true
            config.app_id = 'Some_id'
 
@@ -31,18 +32,17 @@ Or install it yourself as:
            end
 
            if Rails.env.development?
-
            end
 
            if Rails.env.test?
-
            end
          end
-If your value is a boolean you will access them with question mark at the end:
-    Feature.config.test_value?
 
-If you value is string or number you will access on normal(Regular) way:
-    Feature.config.app_id  
+If your value is a boolean(PREDICATE) you will access them with question mark at the end:
+        Feature.config.test_value?
+
+If you value is string or number(NO PREDICATE) you will access on normal(Regular) way:
+        Feature.config.app_id  
 
 
 
