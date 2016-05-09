@@ -1,18 +1,17 @@
 FeatureSettings.config do |config|
-  #config.test_value = true
-
+  # Here you put default values.
+  # You can override them in envairmant conditions.
 
   if Rails.env.production?
-    #config.test_value = false
+    #Some production envairmant override
   end
 
   if Rails.env.development?
-
+    #Some development envairmant override
   end
 
   if Rails.env.test?
-
+    #Some test envairmant override
   end
-
-
+  
 end
