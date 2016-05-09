@@ -19,13 +19,12 @@ Or install it yourself as:
 ## Usage
  Run "rake flags_toggle_config" command will generate under AppRoot/config/initializers/Flags.rb file.All configuration will be placed in this file.You may also specify a Rails environment to use a new feature (eg.  in all environments, but not in production):
 
- * This will generate file like this:
+ This will generate file like this:
 
          FeatureSettings.config do |config|
-
-             config.app_id = 'Some_id'
-             config.enable_some_feature = true
-             config.desktop_subdomain = 'Some default subdomain'
+           config.app_id = 'Some_id'
+           config.enable_some_feature = true
+           config.desktop_subdomain = 'Some default subdomain'
 
            if Rails.env.production?
              config.app_id = 'Production_id'
